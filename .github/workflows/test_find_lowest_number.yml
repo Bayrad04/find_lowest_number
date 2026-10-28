@@ -28,7 +28,7 @@ jobs:
         testData/test1_input.txt \
         test1_output.txt
 
-        diff test1_output.txt test_data/test1_expected.txt
+        diff test1_output.txt testData/test1_expected.txt
         
     - name: Test Case 2
       run: |
@@ -36,7 +36,7 @@ jobs:
         testData/test2_input.txt \
         test2_output.txt
 
-        diff test2_output.txt test_data/test2_expected.txt
+        diff test2_output.txt testData/test2_expected.txt
         
     - name: Test Case 3
       run: |
@@ -44,4 +44,4 @@ jobs:
         testData/test3_input.txt \
         test3_output.txt
 
-        diff test3_output.txt test_data/test3_expected.txt
+        diff test3_output.txt testData/test3_expected.txt
