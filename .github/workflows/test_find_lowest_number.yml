@@ -1,0 +1,47 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Test Find Lowest Number
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  test-application:
+    name: Run automated tests
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+        
+    - name: Test Case 1
+      run: |
+        python3 find_lowest_number.py \
+        testData/test1_input.txt \
+        test1_output.txt
+
+        diff test1_output.txt test_data/test1_expected.txt
+        
+    - name: Test Case 2
+      run: |
+        python3 find_lowest_number.py \
+        testData/test2_input.txt \
+        test2_output.txt
+
+        diff test2_output.txt test_data/test2_expected.txt
+        
+    - name: Test Case 3
+      run: |
+        python3 find_lowest_number.py \
+        testData/test3_input.txt \
+        test3_output.txt
+
+        diff test3_output.txt test_data/test3_expected.txt
